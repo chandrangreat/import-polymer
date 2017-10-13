@@ -1,0 +1,6 @@
+{
+  "name": "import-polymer",
+  "short_name": "import-polymer",
+  "start_url": "/",
+  "display": "standalone"
+}

@@ -1,0 +1,48 @@
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../../bower_components/polymer/polymer.html" >
+
+<dom-module id="import-polymer-app">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    
+    <paper-input label="Flash"></paper-input>
+    <button on-click="handleClick">Hello</button>
+  </template>
+
+  <script>
+
+    /**
+     * @customElement
+     * @polymer
+     */
+    class ImportPolymerApp extends Polymer.Element {
+      constructor() {
+        super()
+        // let resolvedUrl = this.resolveUrl('../../bower_components/paper-input/paper-input.html');
+        // Polymer.importHref(resolvedUrl);
+      }
+      static get is() { return 'import-polymer-app'; }
+      static get properties() {
+        return {
+          prop1: {
+            type: String,
+            value: 'import-polymer-app'
+          }
+        };
+      }
+  
+      handleClick() {
+        setTimeout(() => {
+          let resolvedUrl = this.resolveUrl('../../bower_components/paper-input/paper-input.html');
+          Polymer.importHref(resolvedUrl);
+        }, 10000);
+      }
+    }
+
+    window.customElements.define(ImportPolymerApp.is, ImportPolymerApp);
+  </script>
+</dom-module>
